@@ -35,14 +35,14 @@ class UserEntity
     /**
      * @Column(name="password_hash", type="text")
      */
-    private $passwordHash;
+    private $password;
 
     /**
      * @Column(name="date_created", type="date_time")
      */
     private $dateCreated = DateTime::dateNow();
 
-    
+
     private $roles;
     private $status;
 }
