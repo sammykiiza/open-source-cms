@@ -25,7 +25,7 @@ class UserEntity
     private $id;
 
     /**
-     * @Column(name="name", type="text")
+     * @Column(name="name", type="string")
      */
     private $name;
 
@@ -35,7 +35,7 @@ class UserEntity
     private $emailAddress;
 
     /**
-     * @Column(name="password_hash", type="text")
+     * @Column(name="password_hash", type="string")
      */
     private $password;
 
