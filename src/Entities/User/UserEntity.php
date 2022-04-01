@@ -5,6 +5,8 @@ namespace App\Entities\User;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\Console\Helper\Table;
 use App\Value\DateTime;
+use App\Entities\User\Enum\Status\Status;
+use App\Entities\User\Enum\Role\Role;
 
 #[Entity]
 #[Table(name: "user")]
