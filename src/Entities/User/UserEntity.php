@@ -42,7 +42,13 @@ class UserEntity
      */
     private $dateCreated = DateTime::dateNow();
 
-
+    /**
+     * @Column(name="roles", type="string", enumType=Role::class)
+     */
     private $roles;
+
+    /**
+     * @Column(name="status", type="string", enumType=Status::class)
+     */
     private $status;
 }
