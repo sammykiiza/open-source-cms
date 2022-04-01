@@ -7,50 +7,35 @@ use Symfony\Component\Console\Helper\Table;
 use App\Value\DateTime;
 use App\Entities\User\Enum\Status\Status;
 use App\Entities\User\Enum\Role\Role;
+use Doctrine\DBAL\Schema\Column;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\GeneratedValue;
 
 #[Entity]
 #[Table(name: "user")]
 class UserEntity
 {
-    /**
-     * @Id 
-     * @Column(type="integer")
-     * @GeneratedValue
-     */
-    private $internalId;
+    #[Column(name:"internalId"), Id, GeneratedValue]
+    private readonly int $internalId;
 
-    /**
-     * @Column(name="id", type="value_id")
-     */
+    #[Column(type:"value_id", name:"id")]
     private $id;
 
-    /**
-     * @Column(name="name", type="string")
-     */
+    #[Column(name:"name", type:"string")]
     private $name;
 
-    /**
-     * @Column(name="email_address", type="email_address")
-     */
+    #[Column(name:"email_address", type:"email_address")]
     private $emailAddress;
 
-    /**
-     * @Column(name="password_hash", type="string")
-     */
+    #[Column(name:"password", type:"string")]
     private $password;
 
-    /**
-     * @Column(name="date_created", type="date_time")
-     */
+    #[Column(name:"date_created", type:"date_time")]
     private $dateCreated = DateTime::dateNow();
 
-    /**
-     * @Column(name="roles", type="string", enumType=Role::class)
-     */
+    #[Column(name:"roles", type:"string", enumType: Role::class)]
     private $roles;
 
-    /**
-     * @Column(name="status", type="string", enumType=Status::class)
-     */
+    #[Column(name:"status", type:"string", enumType: Status::class)]
     private $status;
 }
