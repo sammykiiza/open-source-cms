@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace App\Value;
 
 use App\Value\AbstractValue;
-use Doctrine\ORM\Id\UuidGenerator;
 use Ramsey\Uuid\Uuid;
 
 class Id extends AbstractValue

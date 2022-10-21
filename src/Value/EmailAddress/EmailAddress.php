@@ -1,7 +1,7 @@
 <?php 
 declare(strict_types=1);
 
-namespace App\Value;
+namespace App\Value\EmailAddress;
 use App\Value\AbstractValue;
 
 class EmailAddress extends AbstractValue
@@ -24,7 +24,7 @@ class EmailAddress extends AbstractValue
      * @param string $email
      * @return mixed
      */
-    public function sanitize(string $email) : mixed
+    public static function sanitize(string $email) : mixed
     {
         return filter_var($email, FILTER_SANITIZE_EMAIL);
     }
@@ -33,9 +33,9 @@ class EmailAddress extends AbstractValue
      * @param string $value
      * @return EmailAddress
      */
-    public function fromHtmlInput(string $value): self
+    public static function fromValue(string $value): self
     {
-        $sanitized = $this->sanitize($value);
+        $sanitized = EmailAddress::sanitize($value);
         return new EmailAddress($sanitized);
     }
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\Infrastructure\Persistence\Doctrine\Type;
 use Doctrine\DBAL\Types\GuidType;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
-use App\Value\DateTime;
+use App\Value\DateTime\DateTimeValue;
 use App\Entities\Exception\InvalidArgumentException;
 
 class DateTimeType extends GuidType
@@ -35,7 +35,7 @@ class DateTimeType extends GuidType
             return null;
         }
 
-        return new DateTime($value);
+        return new DateTimeValue($value);
     }
 
     /**
@@ -50,7 +50,7 @@ class DateTimeType extends GuidType
             return null;
         }
 
-        if ($value instanceof DateTime) {
+        if ($value instanceof DateTimeValue) {
             return parent::convertToDatabaseValue($value->getValue(), $platform);
         }
         if (is_string($value)) {

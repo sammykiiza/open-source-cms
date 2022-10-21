@@ -10,6 +10,11 @@
             "App\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\App\\": "Tests/"
+        }
+    },
     "authors": [
         {
             "name": "sammykiiza",
@@ -23,6 +28,12 @@
         "doctrine/annotations": "1.13.2",
         "symfony/yaml": "^5.4",
         "symfony/cache": "^5.4",
-        "ramsey/uuid": "5.x-dev"
+        "ramsey/uuid": "5.x-dev",
+        "web-token/jwt-core": "v3.0.x-dev",
+        "web-token/jwt-key-mgmt": "*",
+        "web-token/jwt-checker": "*",
+        "web-token/jwt-signature": "*",
+        "web-token/jwt-signature-algorithm-hmac": "*",
+        "vlucas/phpdotenv": "5.5.x-dev"
     }
 }

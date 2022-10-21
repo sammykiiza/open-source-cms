@@ -2,10 +2,10 @@
 declare(strict_types=1);
 
 namespace App\Infrastructure\Persistence\Doctrine\Type;
-use Doctrine\DBAL\Types\GuidType;
-use Doctrine\DBAL\Platforms\AbstractPlatform;
-use App\Value\EmailAddress;
 use App\Entities\Exception\InvalidArgumentException;
+use App\Value\EmailAddress\EmailAddress;
+use Doctrine\DBAL\Platforms\AbstractPlatform;
+use Doctrine\DBAL\Types\GuidType;
 
 class EmailAddressType extends GuidType
 {
